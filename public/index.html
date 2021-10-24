@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>React</title>
+    <script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+      class Letter extends React.Component {
+        render() {
+          var style = {
+            padding: "10px",
+            margin: "10px",
+            backgroundColor: "#FFDE00",
+            display: "inline-block",
+            color: this.props.color
+          };
+          return <div style={style}>{this.props.children}</div>;
+        }
+      }
+      ReactDOM.render(
+        <div>
+          <Letter color="#FF0000">A</Letter>
+          <Letter color="#00CC00">B</Letter>
+          <Letter color="#0000FF">C</Letter>
+        </div>,
+        document.querySelector("#container")
+      );
+    </script>
+  </body>
+</html>
